@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>angel.exe</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <button onclick="showPage('home')">system</button>
+  <button onclick="showPage('archive')">archive</button>
+  <button onclick="showPage('ghost')">ghost</button>
+  <button onclick="showPage('signal')">signal</button>
+  <button onclick="showPage('prayer')">prayer</button>
+  <button onclick="showPage('music')">music</button>
+  <button onclick="showPage('inventory')">inventory</button>
+  <button onclick="showPage('oracle')">oracle.exe</button>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <h1>angel.exe</h1>
+
+  <div class="system">
+    system online<br>
+    status: unstable but functional<br>
+    identity: loading<span class="dots"></span><br>
+    memory sync: active<br>
+    saving soul<span class="dots"></span><br>
+    integrity: partial<br>
+  </div>
+
+<div id="echo">
+memory trace: mount remains active in subsystem logs
+</div>
+  <button class="action-btn" onclick="openTerminal()">ACCESS TERMINAL</button>
+</div>
+
+<!-- ARCHIVE -->
+<div id="archive" class="page">
+  <h1>archive.log</h1>
+
+  <textarea id="logInput" placeholder="system log..."></textarea>
+  <button class="action-btn" onclick="saveLog()">save</button>
+
+  <h2>entries</h2>
+  <div id="logs"></div>
+</div>
+
+<!-- GHOST -->
+<div id="ghost" class="page">
+  <h1>ghost_file</h1>
+
+  <textarea id="ghostInput" placeholder="old songs, train tickets, ghosts..."></textarea>
+  <button class="action-btn" onclick="saveGhost()">save</button>
+
+  <div id="ghostOutput" class="entry"></div>
+</div>
+
+<!-- SIGNAL -->
+<div id="signal" class="page">
+  <h1>signal</h1>
+
+  <textarea id="signalInput" placeholder="the archive remembers..."></textarea>
+  <button class="action-btn" onclick="saveSignal()">save</button>
+
+  <div id="signalOutput" class="entry"></div>
+</div>
+
+<!-- PRAYER -->
+<div id="prayer" class="page">
+  <h1>prayer.signal</h1>
+
+  <div class="entry">
+submit transmission to heaven
+  </div>
+
+  <textarea id="prayerInput" placeholder="write your prayer..."></textarea>
+
+  <button class="action-btn" onclick="sendPrayer()">
+    send prayer
+  </button>
+</div>
+
+<!-- MUSIC -->
+<div id="music" class="page">
+  <h1>music</h1>
+
+  <audio id="audioPlayer" controls style="margin-top:20px; width:100%;"></audio>
+
+   <div class="entry">
+    angel.exe
+  </div>
+  <div class="entry" >
+    heaven.dll
+  </div>
+  <div class="entry" onclick="downloadTrack('p2.wav')">
+  poison.sys
+</div>
+  <div class="entry">archive_memory.bin</div>
+</div>
+
+<!-- INVENTORY -->
+<div id="inventory" class="page">
+  <h1>inventory</h1>
+
+  <div id="inventoryLog" class="entry"></div>
+</div>
+<!-- ORACLE -->
+<div id="oracle" class="page">
+  <h1>oracle.exe</h1>
+
+  <button class="action-btn" onclick="generateOracle()">generate prophecy</button>
+
+  <div id="oracleOutput" class="entry"></div>
+</div>
+
+<!-- HEAVEN SYSTEM (SECRET PAGE) -->
+<!-- HEAVEN SYSTEM (SECRET PAGE) -->
+<div id="heaven" class="page">
+
+  <div class="heaven-nav">
+    <button onclick="showHeaven('h-core')">core</button>
+    <button onclick="showHeaven('h-logs')">log</button>
+    <button onclick="showHeaven('h-archive')">corrupted archive</button>
+    <button onclick="showHeaven('h-perms')">permissions</button>
+    <button onclick="showHeaven('h-prayers')">prayers</button>
+    
+  </div>
+
+  
+
+
+
+<button class="action-btn" onclick="descendSystem()">
+  fallen_angel.sh
+</button>
+
+
+
+  <!-- CORE -->
+  <div id="h-core" class="heaven-section active">
+    <h1>HEAVEN SYSTEM</h1>
+
+    <div class="entry">
+ACCESS LEVEL: DIVINE  
+PERMISSIONS: GRANTED  
+STATUS: WATCHING  
+ARCHIVE STATE: CORRUPTED
+    </div>
+  </div>
+
+  <!-- LOGS -->
+  <div id="h-logs" class="heaven-section">
+    <h2>log</h2>
+
+    <div class="entry">
+  I heard them outside the corridor again last night. 
+  Not footsteps exactly. More like something dragging itself softly across the marble, 
+  trying not to be heard. The others pretend the sounds are normal, but nobody sleeps anymore.
+
+  I checked the records this morning and three names were gone. 
+  No deletion logs. No permissions changed. Just absence.
+
+  One of them told me not to keep personal notes anymore. 
+  He said memory becomes dangerous when the system starts forgetting people on purpose.
+
+  I tried praying but the static answered first. 
+  I think something below is still trying to 
+ <a href="#"
+   onclick="downloadDominions(event)"
+   style="cursor:pointer; color:inherit; text-decoration:none;">
+   speak
+</a>
+</div>
+  </div>
+
+
+
+  <!-- ARCHIVE -->
+  <!-- ARCHIVE -->
+<div id="h-archive" class="heaven-section">
+ 
+
+<div id="dominionsOutput"></div>
+  </div>
+
+  <!-- PERMISSIONS -->
+  <div id="h-perms" class="heaven-section">
+    <h2>permission table</h2>
+
+    <div class="entry">
+read: allowed  
+write: denied  
+forget: denied  
+return: pending  
+escape: impossible  
+    </div>
+  </div>
+
+  <!-- PRAYERS -->
+<div id="h-prayers" class="heaven-section">
+  <h2>prayer archive</h2>
+
+  <div class="entry">
+    incoming transmissions from earth:
+  </div>
+
+  <div id="prayerArchive" class="entry"></div>
+</div>
+
+</div>
+
+
+<!-- ASCENSION SCREEN -->
+<div id="ascension" class="page">
+  <div class="ascend-box">
+
+    <pre class="wings">
+    
+⠀⠀⠀⠀⣤⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣤⡀⠀⠀
+⠀⠀⡘⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⢣⠀⠀
+⠀⠐⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢸⢣⠀
+⠀⡧⢰⠀⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠁⡄⢸⡀
+⢸⠸⡈⢧⡀⠣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⢁⣼⠃⡆⡅
+⡞⡌⢿⡼⣿⠼⡌⠢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠔⢉⠶⢾⢏⡼⢁⢻
+⠱⡸⣆⢿⡟⢧⠈⣦⣀⠁⢂⠀⠀⠀⠀⠀⠀⡠⠊⣀⣴⡇⡸⢿⡟⣡⠏⡌
+⠀⠷⣌⢷⣷⣄⡸⢾⡯⠀⢀⠆⠀⠀⠀⠀⠀⡀⠀⢽⡷⠟⡀⣾⡿⣩⢾⠀
+⠀⠘⢌⡻⢿⣆⣘⣽⣦⠀⠪⡀⠀⠀⠀⠀⢀⠅⠀⣼⣋⣁⣰⣿⠞⡡⠆⠀
+⠀⠀⠀⠉⠐⡏⡠⠔⢿⣇⡀⠈⡄⠀⠀⢀⠆⢠⣼⡿⠣⢄⣨⡇⠉⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠧⡔⠉⠿⣷⠤⠬⠆⠰⠤⠤⠿⠟⡉⢢⠼⠂⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠘⠛⠒⠋⠀⠀⠀⠀⠀⠀⠐⠒⠛⠊⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    </pre>
+
+    <h1>ascending into heaven<span class="dots"></span></h1>
+
+    <p class="ascend-text">
+      mounting celestial permissions...<br>
+      restoring divine archives...<br>
+      syncing forgotten memories...
+    </p>
+
+  </div>
+</div>
+
+<div id="descension">
+  <div class="ascend-box">
+
+    <h1>descending from heaven<span class="dots"></span></h1>
+
+    <p class="ascend-text">
+      revoking celestial permissions...<br>
+      restoring mortal limitations...<br>
+      reloading human error...
+    </p>
+
+  </div>
+</div>
+
+<!-- TERMINAL -->
+<div id="terminalOverlay">
+  <div id="terminalWindow">
+
+    <div class="header">
+      <span>97110103101108@system:~</span>
+      <button class="close-btn" onclick="closeTerminal()">✕</button>
+    </div>
+
+    <div id="terminalOutput" class="output">
+welcome.
+
+
+    </div>
+<!--/*commands:
+systemctl status
+date
+whoami
+ping system
+sysctl --void
+sysctl --reset
+sysctl --dim
+angel.exec
+mem read
+dream
+mount --bind /heaven /system -->
+    <input
+      id="cmd"
+      type="text"
+      placeholder="enter command..."
+      onkeydown="handleCommand(event)"
+    >
+
+  </div>
+
+
+
+</div>
+
+
+<div id="heavenConfirm">
+  <div>
+    <h1>you have made it into heaven</h1>
+    <p>system approval granted</p>
+  </div>
+</div>
+
+<div id="fallConfirm">
+  <div>
+    <h1>you have fallen</h1>
+    <p>system rejection acknowledged</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
